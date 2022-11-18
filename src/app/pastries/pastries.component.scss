@@ -1,0 +1,100 @@
+.main{
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+}
+
+app-pastrie-detail{
+    margin-top:15px;
+    width:300px;
+}
+.list{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 300px;
+}
+.item{
+    border: solid;
+    border-color:  var(--main);
+    background-color: var(--main);
+
+    border-top-left-radius:     6px;
+    border-top-right-radius:    6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius:  6px;
+
+    margin: 5px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+.item:hover{
+    background-color: red;
+    border-color: red;
+    color: white;
+}
+.infos{
+    background-color:  white;
+    color: black;
+
+    padding-top:2px;
+    padding-bottom: 2px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.infos p{
+    margin:0;
+    margin-bottom:15px;
+    padding:0;
+}
+.ref{
+    padding-top:2px;
+    padding-bottom: 2px;
+    padding-left: 15px;
+
+    width:100%;
+}
+.tags{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    column-gap: 10px;
+    row-gap: 7px;
+}
+.tag{
+    background-color: blue;
+    color: white;
+
+    padding-right: 4px;
+    padding-left: 4px;
+
+    border-top-left-radius:     6px;
+    border-top-right-radius:    6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius:  6px;
+}
+    .tag.taste{background-color: green}
+    .tag.type{background-color: goldenrod}
+    .tag.ing{background-color: purple}
+    .tag.selected{
+        border: solid;
+        border-color: red;
+        border-width: 2px;
+    }
+.like{
+    margin-top: 15px;
+    display: flex;
+    column-gap: 5px;
+}
+.like p{
+    margin: 0;
+}

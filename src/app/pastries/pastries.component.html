@@ -1,0 +1,42 @@
+<!--<h1 style="text-align: center; margin:15px;">{{title}}</h1>-->
+<div class="main">
+    <app-pastrie-detail *ngIf="selectedPastrie!=undefined"
+        [pastrieDetail]="selectedPastrie"
+        [listDetail]="selectedList"
+    ></app-pastrie-detail>
+    <h1 *ngIf="current===undefined">No result</h1>
+    <div class="list" *ngIf="current!=undefined">
+        <div style="display:flex;justify-content: space-between;width:90%;">
+            <button (click)="arrow(-1)">Left</button>
+            <p style="margin:0;">{{current.i}} sur {{useList.length}}</p>
+            <button (click)="arrow(1)">Right</button>
+        </div>
+        <div *ngFor="let pastrie of useList">
+            <div class="item" appRed *ngIf="current.id === pastrie.id">
+                <div class="ref">
+                    <h2 style="margin:0;">{{pastrie.ref}}</h2>
+                </div>
+                <div class="infos">
+                    <h2>{{pastrie.name}}</h2>
+                    <p>{{pastrie.description}}</p>
+                    <div class="tags">
+                        <button class="tag {{tagToggle[tag]}} {{ tag | tags }}"
+                        *ngFor="let tag of pastrie.tags"
+                        (click)="tags(tag, $event)">
+                            {{tag}}
+                        </button>
+                    </div>
+                    <div class="like">
+                        <p>like :</p>
+                        <p *ngIf="pastrie.like==='Much'">M</p>
+                        <p *ngIf="pastrie.like==='Rather'">R</p>
+                        <p *ngIf="pastrie.like===undefined">-</p>
+                    </div>
+                    <p>{{pastrie.quantity}} unités disponibles</p>
+                </div>
+                <button (click)="detail(pastrie.id)" style="width:100%; border-radius: 0;">Detail</button>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="item">
+    <div class="ref">
+        <h2 style="margin:0;">Detail</h2>
+    </div>
+    <h2>{{pastrieDetail.name}}</h2>
+    <img src="{{pastrieDetail.url}}" alt="">
+    <ul>
+        <li *ngFor="let ing of listDetail.list">
+            <div>
+                <p>{{ing}}</p>
+                <button (click)="remove(ing)">x</button>
+            </div>
+        </li>
+    </ul>
+    <div class="new">
+        <label for="label{{listDetail.id}}"></label>
+        <input name="label{{listDetail.id}}" type="text"
+        #saisie (keyup)="0" (keyup.enter)="add(saisie.value)"
+        (focus)="test(false)" (focusout)="test(true)"
+        > <!--$event-->
+        <button (click)="add(saisie.value)">add</button>
+    </div>
+</div>

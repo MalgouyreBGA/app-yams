@@ -1,0 +1,18 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div id="navbar">
+  <div class="left">
+    <h2>{{title}}</h2>
+    <button>Home</button>
+    <button>Se connecter</button>
+  </div>
+  <div class="right">
+    <input name="inputSearch" type="text" (focus)="test(false)" (focusout)="test(true)"
+        #research (keyup)="0" (keyup.enter)="inputSearch(research.value)"> <!--$event-->
+        <button (click)="inputSearch(research.value)">Rechercher</button>
+  </div>
+</div>
+<app-pastries [search]="search"></app-pastries>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
